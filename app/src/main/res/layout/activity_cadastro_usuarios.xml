@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroUsuariosActivity">
+    tools:context=".CadastroUsuariosActivity"
+    android:background="@drawable/fundo_agenda">
 
     <EditText
+        android:background="@drawable/campos_preencher"
         android:id="@+id/editTextCadastrarNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="156dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -23,12 +25,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:background="@drawable/campos_preencher"
         android:id="@+id/editTextCadastrarEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -39,12 +42,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextCadastrarNome" />
 
     <EditText
+        android:background="@drawable/campos_preencher"
         android:id="@+id/editTextCadastrarSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -56,6 +60,7 @@
 
     <Button
         android:id="@+id/buttonSalvar"
+
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -63,10 +68,11 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="#2196F3"
+        android:background="@drawable/custom_buttom_blue"
         android:onClick="cadastrarUsuario"
         android:text="cadastrar"
         android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCadastrarSenha" />
