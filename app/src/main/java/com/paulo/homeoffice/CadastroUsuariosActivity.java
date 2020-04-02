@@ -30,7 +30,7 @@ public class CadastroUsuariosActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextCadastrarEmail);
         editTextNome = findViewById(R.id.editTextCadastrarNome);
         editTextSenha = findViewById(R.id.editTextCadastrarSenha);
-        buttonCadastar = findViewById(R.id.buttonSalvar);
+        buttonCadastar = findViewById(R.id.buttonSalvarCadastro);
     }
     public void cadastrarUsuario(View view){
         if(validadeCamposCadastro()){
