@@ -1,5 +1,9 @@
 package com.paulo.homeoffice;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 class ClasseUsuario {
     String id, nome, email, senha;
 
@@ -37,4 +41,5 @@ class ClasseUsuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
 }

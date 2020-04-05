@@ -19,15 +19,25 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editTextEmail, editTextSenha;
     Button buttonLogin, buttonNovo;
+    FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        auth = FirebaseAuth.getInstance();
+        if (!auth.getCurrentUser().toString().isEmpty()){
+            Intent atividades = new Intent(MainActivity.this, AtividadesActivity.class);
+            startActivity(atividades);
+        }
+
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextSenha = findViewById(R.id.editTextSenha);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonNovo = findViewById(R.id.buttonNovo);
+
+
     }
 
     public void login(View view){
