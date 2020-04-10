@@ -1,11 +1,15 @@
 package com.paulo.homeoffice;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,20 +27,25 @@ import java.util.TimeZone;
 public class AtividadesActivity extends AppCompatActivity {
 
     TextView textViewData, textViewHora;
-    Button buttonSalvar, buttonFinalizarAtividade;
+    Button buttonSalvar, buttonFinalizarAtividade, buttonVerAtividade;
     EditText editTextAtividades;
     ClasseAtividade atividadeClasse = new ClasseAtividade();
+    FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades);
 
+        auth = FirebaseAuth.getInstance();
+
         textViewData = findViewById(R.id.textViewData);
         textViewHora = findViewById(R.id.textViewHora);
         editTextAtividades = findViewById(R.id.editTextAtividades);
         buttonSalvar = findViewById(R.id.buttonSalvarAtividade);
         buttonFinalizarAtividade = findViewById(R.id.buttonFinalizarAtividade);
+        buttonVerAtividade = findViewById(R.id.buttonVerAtividade);
 
         SharedPreferences preferencesAtividades = getSharedPreferences("Atividades", MODE_PRIVATE);
         String Atividades = preferencesAtividades.getString("Atividades", null);
@@ -93,6 +102,13 @@ public class AtividadesActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+
+        buttonVerAtividade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AtividadesActivity.this, VisualizaAtividadesActivity.class));
             }
         });
 
@@ -192,4 +208,20 @@ public class AtividadesActivity extends AppCompatActivity {
 
         Toast.makeText(this, idUsuarioLogado + " " + emailUsuarioLogado, Toast.LENGTH_SHORT).show();
     }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menuSair:
+                auth.signOut();
+                startActivity(new Intent(AtividadesActivity.this, MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

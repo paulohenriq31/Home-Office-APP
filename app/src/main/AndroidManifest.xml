@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AtividadesActivity" android:label="Atividade" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".CadastroUsuariosActivity" android:label="Cadastro de Usuario" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".VisualizaAtividadesActivity"
+            android:label="Ver Atividades"
+            android:parentActivityName=".AtividadesActivity"/>
+        <activity
+            android:name=".AtividadesActivity"
+            android:label="Atividade" />
+        <activity
+            android:name=".CadastroUsuariosActivity"
+            android:label="Cadastro de Usuario"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

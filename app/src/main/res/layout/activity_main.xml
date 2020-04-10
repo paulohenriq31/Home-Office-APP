@@ -55,7 +55,7 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/campos_preencher"
         android:hint="E-mail"
-        android:inputType="textPersonName"
+        android:inputType="text|textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

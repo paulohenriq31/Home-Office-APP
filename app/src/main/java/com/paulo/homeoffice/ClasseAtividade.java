@@ -6,7 +6,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ClasseAtividade {
-        String dataInicio, dataFim, horaInicio, horaFim, email, atividade, idFuncionario;
+    String dataInicio, dataFim, horaInicio, horaFim, email, atividade, idFuncionario;
 
     public String getDataInicio() {
         return dataInicio;
