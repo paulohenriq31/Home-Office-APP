@@ -159,6 +159,7 @@
 
     <Button
         android:id="@+id/buttonVerAtividade"
+        android:background="@drawable/custom_buttom_blue"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginStart="55dp"
@@ -167,6 +168,8 @@
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:text="Ver Atividade"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonFinalizarAtividade" />

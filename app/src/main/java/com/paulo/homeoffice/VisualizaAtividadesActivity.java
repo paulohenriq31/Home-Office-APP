@@ -69,7 +69,7 @@ public class VisualizaAtividadesActivity extends AppCompatActivity {
 
         Query query =  dados.orderByChild("idFuncionario").equalTo(idUsuarioLogado);
 
-        query.addValueEventListener(new ValueEventListener() {
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -98,7 +98,7 @@ public class VisualizaAtividadesActivity extends AppCompatActivity {
 
 
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_consulta, menu);
         return true;
     }
 
@@ -107,6 +107,8 @@ public class VisualizaAtividadesActivity extends AppCompatActivity {
             case R.id.menuSair:
                 auth.signOut();
                 startActivity(new Intent(VisualizaAtividadesActivity.this, MainActivity.class));
+            case R.id.menuAtualizar:
+                verAtividades();
         }
         return super.onOptionsItemSelected(item);
     }
