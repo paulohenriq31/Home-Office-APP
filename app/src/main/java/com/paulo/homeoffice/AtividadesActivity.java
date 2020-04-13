@@ -204,9 +204,27 @@ public class AtividadesActivity extends AppCompatActivity {
         atividadeClasse.setIdFuncionario(idUsuarioLogado);
 
         atividadeClasse.setAtividadeFinalizada();
+        limparCampos();
 
 
         Toast.makeText(this, idUsuarioLogado + " " + emailUsuarioLogado, Toast.LENGTH_SHORT).show();
+    }
+
+    private void limparCampos() {
+        SharedPreferences sharedPreferencesData = getSharedPreferences("dataInicio", MODE_PRIVATE);
+        SharedPreferences.Editor editorData = sharedPreferencesData.edit();
+        editorData.putString("dataInicio", "");
+        editorData.commit();
+
+        SharedPreferences sharedPreferencesHora = getSharedPreferences("horaInicio", MODE_PRIVATE);
+        SharedPreferences.Editor editorHora = sharedPreferencesHora.edit();
+        editorHora.putString("horaInicio", "");
+        editorHora.commit();
+
+        SharedPreferences sharedPreferencesAtividade = getSharedPreferences("Atividades", MODE_PRIVATE);
+        SharedPreferences.Editor editorAtividades = sharedPreferencesAtividade.edit();
+        editorAtividades.putString("Atividades", "");
+        editorAtividades.commit();
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
